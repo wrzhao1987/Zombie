@@ -26,8 +26,17 @@ public class Sun : MonoBehaviour {
 			Animation ani = GetComponent<Animation>();
 			ani.Play("SunSpawn");
 		}
+		StartCoroutine(LiveOrDie());
 	}
-	
+
+	private IEnumerator LiveOrDie()
+	{
+		while (true)
+		{
+			yield return new WaitForSeconds(10.0f);
+			Destroy(gameObject);
+		}
+	}
 	// Update is called once per frame
 	void Update () {
 		

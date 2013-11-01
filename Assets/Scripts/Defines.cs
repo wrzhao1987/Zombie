@@ -17,6 +17,7 @@ public enum ZombieType
 	NormalZombie = 1,
 	ConeHeadZombie,
 	BucketHeadZombie,
+	FlagZombie,
 }
 
 public enum GameStage

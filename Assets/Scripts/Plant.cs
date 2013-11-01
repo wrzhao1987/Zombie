@@ -9,32 +9,32 @@ public class Plant : MonoBehaviour {
 	protected float damageDelta = 0.0f;
 	protected Transform myTransform;
 	protected Transform spriteTransform;
-	
+
+	public int Life
+	{
+		get {return life;}
+		set {life = value;}
+	}
 	// Use this for initialization
 	protected virtual void Start () {
 		myTransform = transform;
 		spriteTransform = myTransform.FindChild("Sprite");
+		StartCoroutine(LiveOrDie());
 	}
-	
+
+	protected IEnumerator LiveOrDie()
+	{
+		while (true)
+		{
+			if (life <= 0)
+			{
+				Destroy(gameObject);
+			}
+			yield return null;
+		}
+	}
 	// Update is called once per frame
 	void Update () {
-	
-	}
-	
-	protected void OnTriggerStay(Collider other)
-	{
-		if (other.tag.CompareTo("Zombie") == 0)
-		{
-			damageDelta += Time.deltaTime;
-			if (damageDelta >= damageLoop)
-			{
-				damageDelta = 0;
-				life -= 1;
-				if (life <= 0)
-				{
-					Destroy(gameObject);
-				}
-			}
-		}
+
 	}
 }

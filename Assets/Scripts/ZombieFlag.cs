@@ -1,18 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ZombieNormal : Zombie {
-
-	private string normalRunType;
+public class ZombieFlag : Zombie {
+	
 	// Use this for initialization
-	protected override void Start ()
-	{
+	protected override void Start () {
 		base.Start();
-		normalRunType = "NormalRun" + Random.Range(1, 4);
 	}
+	
 	// Update is called once per frame
-	protected override void Update()
-	{	
+	protected override void Update () {
 		if (dead)
 		{
 			PlayAnimation("Die");
@@ -23,12 +20,12 @@ public class ZombieNormal : Zombie {
 		{
 			if (dying)
 			{
-				PlayAnimation("LostHeadRun");
+				PlayAnimation("FlagLostHeadRun");
 				animator.AnimationCompleted = AnimatorDelegate;
 			}
 			else
 			{
-				PlayAnimation(normalRunType);
+				PlayAnimation("FlagRun");
 			}
 			myTransform.Translate(- Vector3.right * Time.deltaTime * currentMoveSpeed);
 		}
@@ -38,12 +35,12 @@ public class ZombieNormal : Zombie {
 			{
 				if (dying)
 				{
-					PlayAnimation("LostHeadAttack");
+					PlayAnimation("FlagLostHeadAttack");
 					animator.AnimationCompleted = AnimatorDelegate;
 				}
 				else
 				{
-					PlayAnimation("NormalAttack");
+					PlayAnimation("FlagAttack");
 				}
 			}
 			else

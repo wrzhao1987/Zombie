@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Manager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ZombieFlag.cs">
     <Files>
-      <File FileName="Assets/Scripts/Manager.cs" Line="258" Column="43" />
-      <File FileName="Assets/Scripts/PlantCard.cs" Line="48" Column="41" />
+      <File FileName="Assets/Scripts/Zombie.cs" Line="137" Column="35" />
+      <File FileName="Assets/Scripts/ZombieFlag.cs" Line="43" Column="34" />
+      <File FileName="Assets/Scripts/ZombieConeHead.cs" Line="7" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
